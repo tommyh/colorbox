@@ -22,6 +22,7 @@
 		inline: false,
 		html: false,
 		iframe: false,
+		iframeId: false,
 		fastIframe: true,
 		photo: false,
 		href: false,
@@ -642,6 +643,10 @@
                 }
                 iframe.name = prefix + (+new Date());
                 iframe.src = settings.href;
+
+                if(settings.iframeId) {
+                  $(iframe).attr("id", settings.iframeId);
+                }
                 
                 if (!settings.scrolling) {
                     iframe.scrolling = "no";
